@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richmond Doe Sowah | Generative AI for Work & Research</title>
+    <meta name="description" content="Portfolio of Richmond Doe Sowah for the Generative AI for Work & Research course by The GRAPH Courses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* WHO Navy family */
+            --navy-900: #001638;
+            --navy-800: #001E48;
+            --navy-700: #002050;
+            --navy-500: #1a325f;
+            --navy-200: #C9DDF3;
+            --navy-100: #EFF6FB;
+
+            /* WHO Blue family */
+            --blue-700: #006CBE;
+            --blue-600: #0078D4;
+            --blue-500: #009ADE;
+            --blue-300: #79B5E3;
+            --blue-100: #C9DDF3;
+            --blue-50:  #EFF6FB;
+
+            /* WHO accents */
+            --orange:  #F26829;
+            --yellow:  #F4A81D;
+            --green:   #80BC00;
+            --magenta: #A6228C;
+            --red:     #EF3842;
+
+            /* Neutrals */
+            --ink-900: #1a2330;
+            --ink-700: #3d434c;
+            --ink-500: #6a7280;
+            --ink-300: #b1b6bd;
+            --ink-100: #e7e9ec;
+            --ink-50:  #f4f6f8;
+
+            --bg:    #f4f6f8;
+            --card:  #ffffff;
+            --line:  #e7e9ec;
+
+            --grad-primary: linear-gradient(135deg, #002050 0%, #0078D4 55%, #009ADE 100%);
+            --grad-warm:    linear-gradient(135deg, #F26829 0%, #F4A81D 100%);
+            --grad-deep:    linear-gradient(135deg, #001638 0%, #002050 60%, #1a325f 100%);
+            --grad-soft:    linear-gradient(180deg, #EFF6FB 0%, #f4f6f8 100%);
+            --grad-text:    linear-gradient(90deg, #002050, #009ADE);
+            --grad-warm-text: linear-gradient(90deg, #F26829, #F4A81D);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Noto Sans', system-ui, sans-serif;
+            color: var(--ink-700);
+            background: var(--bg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--navy-700);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        a { color: inherit; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        .gradient-text {
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .gradient-warm {
+            background: var(--grad-warm-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: var(--blue-50);
+            color: var(--navy-700);
+            border: 1px solid var(--blue-100);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .pill .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: var(--blue-500);
+            box-shadow: 0 0 0 4px rgba(0, 154, 222, 0.18);
+            animation: pulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50%      { transform: scale(1.4); opacity: 0.7; }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 26px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--grad-primary);
+            background-size: 200% 200%;
+            color: white;
+            box-shadow: 0 10px 30px -10px rgba(0, 32, 80, 0.55);
+            animation: shift 6s ease infinite;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px -10px rgba(0, 32, 80, 0.6);
+        }
+
+        @keyframes shift {
+            0%, 100% { background-position: 0% 50%; }
+            50%      { background-position: 100% 50%; }
+        }
+
+        .btn-ghost {
+            background: white;
+            color: var(--navy-700);
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 3px rgba(0, 32, 80, 0.04);
+        }
+        .btn-ghost:hover { transform: translateY(-2px); border-color: var(--blue-500); color: var(--blue-600); }
+
+        /* ===== Navigation ===== */
+        nav.topbar {
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: calc(100% - 32px);
+            max-width: 1100px;
+            padding: 12px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border: 1px solid rgba(0, 32, 80, 0.08);
+            border-radius: 999px;
+            box-shadow: 0 10px 30px -12px rgba(0, 32, 80, 0.10);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--navy-700);
+            text-decoration: none;
+        }
+
+        .nav-logo .mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: var(--grad-primary);
+            background-size: 200% 200%;
+            animation: shift 6s ease infinite;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 6px 14px -6px rgba(0, 32, 80, 0.6);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ink-500);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.25s;
+            position: relative;
+        }
+        .nav-links a:hover { color: var(--navy-700); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--grad-text);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            padding: 9px 18px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 720px) {
+            .nav-links { display: none; }
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+            overflow: hidden;
+            background: var(--grad-soft);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(0, 32, 80, 0.10) 1px, transparent 0);
+            background-size: 28px 28px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            opacity: 0.55;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb.o1 { width: 380px; height: 380px; background: #79B5E3; top: -80px; left: -100px; animation: float 14s ease-in-out infinite; }
+        .orb.o2 { width: 320px; height: 320px; background: #F4A81D; bottom: -100px; right: -60px; opacity: 0.35; animation: float 18s ease-in-out infinite reverse; }
+        .orb.o3 { width: 260px; height: 260px; background: #009ADE; top: 30%; right: 22%; opacity: 0.3; animation: float 22s ease-in-out infinite; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50%      { transform: translate(30px, -30px) scale(1.07); }
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 22px;
+            color: var(--navy-700);
+        }
+
+        .hero h1 .accent {
+            position: relative;
+            display: inline-block;
+        }
+        .hero h1 .accent::after {
+            content: '';
+            position: absolute;
+            left: -2px; right: -2px; bottom: 6px;
+            height: 14px;
+            background: rgba(244, 168, 29, 0.55);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero p.lede {
+            font-size: 1.1rem;
+            color: var(--ink-500);
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        .hero-meta {
+            margin-top: 40px;
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .hero-meta .item {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 13px;
+            color: var(--ink-500);
+        }
+        .hero-meta .item svg { width: 16px; height: 16px; color: var(--blue-500); }
+
+        /* Hero portrait */
+        .portrait-wrap {
+            position: relative;
+            justify-self: center;
+        }
+
+        .portrait-shape {
+            position: absolute;
+            inset: -28px;
+            background: var(--grad-primary);
+            background-size: 200% 200%;
+            border-radius: 38% 62% 56% 44% / 48% 38% 62% 52%;
+            filter: blur(2px);
+            opacity: 0.95;
+            animation: morph 14s ease-in-out infinite, shift 8s ease infinite;
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 38% 62% 56% 44% / 48% 38% 62% 52%; }
+            33%      { border-radius: 62% 38% 44% 56% / 38% 52% 48% 62%; }
+            66%      { border-radius: 48% 52% 62% 38% / 56% 44% 38% 62%; }
+        }
+
+        .portrait {
+            position: relative;
+            z-index: 1;
+            width: 360px;
+            max-width: 80vw;
+            aspect-ratio: 1;
+            border-radius: 30px;
+            overflow: hidden;
+            background: var(--ink-100);
+            box-shadow:
+                0 30px 60px -20px rgba(0, 32, 80, 0.45),
+                0 0 0 6px rgba(255, 255, 255, 0.7);
+        }
+        .portrait img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center 18%;
+            display: block;
+        }
+
+        .badge-card {
+            position: absolute;
+            background: white;
+            padding: 14px 18px;
+            border-radius: 18px;
+            box-shadow: 0 18px 35px -12px rgba(0, 32, 80, 0.18);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 2;
+            font-size: 13px;
+            border: 1px solid var(--line);
+            animation: bob 6s ease-in-out infinite;
+        }
+        .badge-card .icon {
+            width: 38px; height: 38px;
+            border-radius: 12px;
+            display: grid; place-items: center;
+            background: var(--blue-50);
+            color: var(--blue-600);
+        }
+        .badge-card .icon.warm { background: rgba(244, 168, 29, 0.15); color: var(--orange); }
+        .badge-card .label { font-size: 11px; color: var(--ink-500); font-weight: 500; }
+        .badge-card .value { font-weight: 700; color: var(--navy-700); }
+
+        .badge-1 { top: 12%; left: -36px; }
+        .badge-2 { bottom: 14%; right: -28px; animation-delay: -2s; }
+
+        @keyframes bob {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+            .portrait { width: 300px; }
+            .badge-1 { left: -10px; }
+            .badge-2 { right: -10px; }
+        }
+
+        /* ===== Section header ===== */
+        section { position: relative; padding: 110px 0; }
+        section .head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 64px;
+        }
+        .head .eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 12px;
+            color: var(--blue-600);
+            font-weight: 500;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+        .head h2 {
+            font-size: clamp(2rem, 3.6vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .head p {
+            color: var(--ink-500);
+            font-size: 1.05rem;
+        }
+
+        /* ===== About ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .about-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 6px 22px -10px rgba(0, 32, 80, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--grad-primary);
+        }
+
+        .about-card p {
+            color: var(--ink-700);
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+        .about-card p strong { color: var(--navy-700); font-weight: 600; }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .stat {
+            background: var(--blue-50);
+            border-radius: 16px;
+            padding: 18px;
+            text-align: center;
+            border: 1px solid var(--blue-100);
+        }
+        .stat .num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+        .stat .lab {
+            font-size: 12px;
+            color: var(--ink-500);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .info-tile {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 22px 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .info-tile:hover {
+            transform: translateY(-3px);
+            border-color: var(--blue-500);
+            box-shadow: 0 14px 30px -14px rgba(0, 32, 80, 0.22);
+        }
+        .info-tile .ic {
+            flex-shrink: 0;
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            background: var(--blue-50);
+            color: var(--blue-600);
+            display: grid; place-items: center;
+        }
+        .info-tile:nth-child(2) .ic { background: rgba(244, 168, 29, 0.15); color: var(--orange); }
+        .info-tile:nth-child(3) .ic { background: rgba(128, 188, 0, 0.15); color: #5a8500; }
+        .info-tile:nth-child(4) .ic { background: rgba(166, 34, 140, 0.10); color: var(--magenta); }
+        .info-tile h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .info-tile p {
+            color: var(--ink-500);
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+        .skill-tag {
+            background: white;
+            color: var(--ink-700);
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid var(--line);
+            transition: all 0.25s ease;
+        }
+        .skill-tag:hover {
+            background: var(--navy-700);
+            color: white;
+            border-color: var(--navy-700);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== Course ===== */
+        #course {
+            background:
+                radial-gradient(80% 80% at 50% 0%, rgba(0, 154, 222, 0.07) 0%, transparent 60%),
+                white;
+        }
+
+        .course-banner {
+            background: var(--grad-deep);
+            color: white;
+            border-radius: 28px;
+            padding: 48px;
+            margin-bottom: 56px;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+        .course-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(244, 168, 29, 0.32) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .course-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+            background-size: 24px 24px;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .course-banner h3 {
+            color: white;
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .course-banner p {
+            color: rgba(255, 255, 255, 0.82);
+            position: relative;
+            z-index: 1;
+            font-size: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 22px;
+            position: relative;
+            z-index: 1;
+        }
+        .feature-line {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.92);
+        }
+        .feature-line svg {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            color: var(--yellow);
+        }
+
+        .modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 22px;
+        }
+
+        .module {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 30px 28px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .module::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--grad-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .module:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 44px -16px rgba(0, 32, 80, 0.20);
+            border-color: var(--blue-100);
+        }
+        .module:hover::before { transform: scaleX(1); }
+
+        .module .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--ink-300);
+            letter-spacing: 0.12em;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .module .ic-wrap {
+            width: 52px; height: 52px;
+            border-radius: 16px;
+            background: var(--blue-50);
+            color: var(--blue-600);
+            display: grid; place-items: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+        .module:hover .ic-wrap {
+            background: var(--grad-primary);
+            color: white;
+            transform: rotate(-6deg) scale(1.05);
+        }
+
+        /* warm variants */
+        .module.warm .ic-wrap { background: rgba(244, 168, 29, 0.15); color: var(--orange); }
+        .module.warm:hover .ic-wrap { background: var(--grad-warm); color: white; }
+        .module.warm::before { background: var(--grad-warm); }
+
+        .module h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .module p {
+            color: var(--ink-500);
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 760px) {
+            .course-banner { grid-template-columns: 1fr; padding: 36px; }
+            .features { grid-template-columns: 1fr; }
+        }
+
+        /* ===== Submissions ===== */
+        #submissions {
+            background:
+                radial-gradient(60% 60% at 100% 0%, rgba(244, 168, 29, 0.08) 0%, transparent 60%),
+                radial-gradient(60% 60% at 0% 100%, rgba(0, 32, 80, 0.07) 0%, transparent 60%),
+                var(--bg);
+        }
+
+        .submissions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .sub-card {
+            position: relative;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
+        }
+        .sub-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 50px -20px rgba(0, 32, 80, 0.30);
+            border-color: var(--blue-300);
+        }
+
+        .sub-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+        .sub-num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1;
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .sub-card:nth-child(2) .sub-num,
+        .sub-card:nth-child(5) .sub-num,
+        .sub-card:nth-child(8) .sub-num { background: var(--grad-warm-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .sub-status {
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: var(--ink-50);
+            color: var(--ink-500);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .sub-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .sub-card p {
+            color: var(--ink-500);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+        .sub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--blue-600);
+            font-weight: 600;
+            font-size: 14px;
+            transition: gap 0.25s ease;
+        }
+        .sub-card:hover .sub-link { gap: 12px; }
+
+        /* ===== Contact ===== */
+        #contact { padding: 110px 0; }
+        .contact-card {
+            background: var(--grad-deep);
+            color: white;
+            border-radius: 32px;
+            padding: 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -40%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(0, 154, 222, 0.45) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .contact-card::after {
+            content: '';
+            position: absolute;
+            bottom: -40%; right: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(242, 104, 41, 0.35) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .contact-card .pill {
+            background: rgba(255, 255, 255, 0.10);
+            border-color: rgba(255, 255, 255, 0.18);
+            color: rgba(255, 255, 255, 0.92);
+        }
+        .contact-card .pill .dot { background: var(--yellow); box-shadow: 0 0 0 4px rgba(244, 168, 29, 0.25); }
+        .contact-card h2 {
+            color: white;
+            font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+            font-weight: 800;
+            margin: 18px 0 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 540px;
+            margin: 0 auto 32px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-light {
+            background: white;
+            color: var(--navy-700);
+        }
+        .btn-light:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(255, 255, 255, 0.25); }
+        .btn-line {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+        }
+        .btn-line:hover { background: rgba(255, 255, 255, 0.06); }
+
+        @media (max-width: 720px) {
+            .contact-card { padding: 40px 24px; }
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            padding: 36px 0;
+            text-align: center;
+            color: var(--ink-500);
+            font-size: 13px;
+            border-top: 1px solid var(--line);
+        }
+        footer a { color: var(--blue-600); text-decoration: none; font-weight: 600; }
+
+        /* ===== Reveal animations ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal.delay-1 { transition-delay: 0.08s; }
+        .reveal.delay-2 { transition-delay: 0.16s; }
+        .reveal.delay-3 { transition-delay: 0.24s; }
+        .reveal.delay-4 { transition-delay: 0.32s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="topbar">
+        <a href="#top" class="nav-logo">
+            <span class="mark">R</span>
+            <span>Richmond Sowah</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#course">Course</a></li>
+            <li><a href="#submissions">Submissions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#submissions" class="btn btn-primary nav-cta">View Work</a>
+    </nav>
+
+    <!-- Hero -->
+    <section id="top" class="hero">
+        <div class="orb o1"></div>
+        <div class="orb o2"></div>
+        <div class="orb o3"></div>
+
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1 class="reveal delay-1">
+                    Building practical
+                    <span class="accent gradient-text">Generative AI</span>
+                    skills for research and public health work.
+                </h1>
+                <p class="lede reveal delay-2">
+                    I'm Richmond, a statistician and developer building digital tools for analytics and decision-making. This portfolio tracks my eight weeks inside the GRAPH Courses programme on no-code AI tools, responsible task automation, and AI-assisted data analysis.
+                </p>
+                <div class="hero-cta reveal delay-3">
+                    <a href="#submissions" class="btn btn-primary">
+                        See weekly work
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#about" class="btn btn-ghost">About me</a>
+                </div>
+                <div class="hero-meta reveal delay-4">
+                    <div class="item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        Statistician & developer
+                    </div>
+                    <div class="item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+                        Builder of digital platforms
+                    </div>
+                    <div class="item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        Curious about applied AI
+                    </div>
+                </div>
+            </div>
+
+            <div class="portrait-wrap reveal delay-2">
+                <div class="portrait-shape"></div>
+                <div class="portrait">
+                    <img src="Professional_Image_Richmond.jpg" alt="Portrait of Richmond Doe Sowah">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="head">
+                <span class="eyebrow reveal">// About me</span>
+                <h2 class="reveal delay-1">A statistician working at the seam of <span class="gradient-text">data, code, and digital tools</span>.</h2>
+                <p class="reveal delay-2">Analytics platforms, decision-support tools, and the chatbots that make information easier to find.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <p>I work as a statistician and IT consultant focused on analytics, full-stack development, and digital platforms. My day-to-day mixes data architecture, web development, and a steady interest in making information easier to collect, trust, and use.</p>
+                    <p>One of the projects I currently support is the <strong>Regional Health Data Hub (RDHub)</strong>, where I help shape system requirements, integrate multiple data sources, and prototype lightweight conversational AI for indicator discovery.</p>
+                    <p>This portfolio is where I document what I am picking up on the GenAI side of things and how I am putting it to work.</p>
+
+                    <div class="skills-cloud">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">DHIS2</span>
+                        <span class="skill-tag">CSPro</span>
+                        <span class="skill-tag">RAG Pipelines</span>
+                        <span class="skill-tag">Chatbot Design</span>
+                        <span class="skill-tag">Data Visualisation</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="stat">
+                            <span class="num">7+</span>
+                            <span class="lab">Years building tools</span>
+                        </div>
+                        <div class="stat">
+                            <span class="num">5</span>
+                            <span class="lab">Live platforms shipped</span>
+                        </div>
+                        <div class="stat">
+                            <span class="num">8</span>
+                            <span class="lab">Weeks of GenAI ahead</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-tile reveal delay-1">
+                        <div class="ic">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                        </div>
+                        <div>
+                            <h4>Focus areas</h4>
+                            <p>Data analytics, full-stack platforms, and conversational AI for everyday workflows.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-tile reveal delay-2">
+                        <div class="ic">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <div>
+                            <h4>What I'm working on</h4>
+                            <p>Conversational AI for data discovery, content governance for chatbots, and analytics tooling that holds up over time.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-tile reveal delay-3">
+                        <div class="ic">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                        </div>
+                        <div>
+                            <h4>A recent project</h4>
+                            <p>RDHub, the Regional Health Data Hub, a portal that brings together indicators and dashboards into one place.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-tile reveal delay-4">
+                        <div class="ic">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v9z"/></svg>
+                        </div>
+                        <div>
+                            <h4>What I want from this course</h4>
+                            <p>A sharper toolkit for responsible task automation, a working chatbot tied to real material, and AI workflows that hold up under scrutiny.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course -->
+    <section id="course">
+        <div class="container">
+            <div class="head">
+                <span class="eyebrow reveal">// The programme</span>
+                <h2 class="reveal delay-1">About the <span class="gradient-text">course</span></h2>
+                <p class="reveal delay-2">An eight-week guided cohort by The GRAPH Courses on no-code AI tools for responsible task automation and research productivity.</p>
+            </div>
+
+            <div class="course-banner reveal">
+                <div>
+                    <h3>Generative AI for Work & Research</h3>
+                    <p>Run by The GRAPH Courses, based at the University of Geneva. Eight weeks of live workshops, project reviews, and a capstone, anchored in academic rigour and practical, industry-relevant skills.</p>
+                </div>
+                <div class="features">
+                    <div class="feature-line">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Weekly live workshops
+                    </div>
+                    <div class="feature-line">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Live help sessions
+                    </div>
+                    <div class="feature-line">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Private community forums
+                    </div>
+                    <div class="feature-line">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Personalised feedback
+                    </div>
+                    <div class="feature-line">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Capstone project coaching
+                    </div>
+                    <div class="feature-line">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Shareable certificate
+                    </div>
+                </div>
+            </div>
+
+            <div class="modules">
+                <div class="module reveal">
+                    <span class="num">MODULE 01</span>
+                    <div class="ic-wrap">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h4>Websites, Documents & Presentations</h4>
+                    <p>How LLMs are trained, generating Markdown, LaTeX and HTML output, and building simple research websites with ChatGPT Canvas and Replit.</p>
+                </div>
+
+                <div class="module warm reveal delay-1">
+                    <span class="num">MODULE 02</span>
+                    <div class="ic-wrap">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <h4>AI-Automated Data Analysis</h4>
+                    <p>Working with ChatGPT Code Interpreter, Julius, and TheBricks to process datasets, build dashboards, and design spreadsheet automations for recurring analyses.</p>
+                </div>
+
+                <div class="module reveal delay-2">
+                    <span class="num">MODULE 03</span>
+                    <div class="ic-wrap">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </div>
+                    <h4>GenAI for Research & Text Analysis</h4>
+                    <p>Literature reviews with Elicit and LiteRev, text classification, sentiment analysis, knowledge mapping, and automated summarisation workflows.</p>
+                </div>
+
+                <div class="module reveal delay-3">
+                    <span class="num">MODULE 04</span>
+                    <div class="ic-wrap">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </div>
+                    <h4>Custom GPTs & Chatbots</h4>
+                    <p>LLM chat architecture, context windows, RAG systems, custom GPT design, and interactive chatbot building with Botpress.</p>
+                </div>
+
+                <div class="module warm reveal delay-1">
+                    <span class="num">MODULE 05</span>
+                    <div class="ic-wrap">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9 1.65 1.65 0 0 0 4.27 7.18l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <h4>AI for Task Automation</h4>
+                    <p>Agent-based systems, email response automations, browser-control agents, and orchestrating app-to-app workflows responsibly.</p>
+                </div>
+
+                <div class="module reveal delay-2">
+                    <span class="num">MODULE 06</span>
+                    <div class="ic-wrap">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                    </div>
+                    <h4>GenAI for Communication & Outreach</h4>
+                    <p>Research summaries for different audiences, scientific figures and diagrams, video abstracts, and prompt engineering for visualisation.</p>
+                </div>
+
+                <div class="module warm reveal delay-3">
+                    <span class="num">MODULE 07</span>
+                    <div class="ic-wrap">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6m12 0h1.5a2.5 2.5 0 0 1 0 5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21 1.18.54 2.03 2.03 2.03 3.79M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+                    </div>
+                    <h4>Capstone Project & Showcase</h4>
+                    <p>Building a final AI solution with peers and instructors, peer feedback rounds, public Q&A, and a presentation that demonstrates responsible AI practice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submissions -->
+    <section id="submissions">
+        <div class="container">
+            <div class="head">
+                <span class="eyebrow reveal">// Weekly work</span>
+                <h2 class="reveal delay-1">My <span class="gradient-text">submissions</span></h2>
+                <p class="reveal delay-2">Each card links out to the project for that week. Links go live as the work is shipped.</p>
+            </div>
+
+            <div class="submissions-grid">
+                <a href="#" class="sub-card reveal">
+                    <div class="sub-head">
+                        <span class="sub-num">01</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>Websites, Documents & Presentations</h4>
+                    <p>A short research site assembled with ChatGPT Canvas and Replit.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="#" class="sub-card reveal delay-1">
+                    <div class="sub-head">
+                        <span class="sub-num">02</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>AI-Automated Data Analysis</h4>
+                    <p>An automated analysis using Code Interpreter and Julius on a public dataset.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="#" class="sub-card reveal delay-2">
+                    <div class="sub-head">
+                        <span class="sub-num">03</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>Research & Text Analysis</h4>
+                    <p>A literature review and synthesis pipeline using Elicit and LiteRev.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="#" class="sub-card reveal delay-3">
+                    <div class="sub-head">
+                        <span class="sub-num">04</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>Custom GPTs and Chatbots</h4>
+                    <p>A retrieval-augmented chatbot built on top of a curated knowledge base.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="#" class="sub-card reveal">
+                    <div class="sub-head">
+                        <span class="sub-num">05</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>AI for Task Automation</h4>
+                    <p>An agent that handles a real recurring workflow end to end.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="#" class="sub-card reveal delay-1">
+                    <div class="sub-head">
+                        <span class="sub-num">06</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>Communication & Outreach</h4>
+                    <p>Scientific figures, diagrams, and a short explainer produced with AI tools.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="#" class="sub-card reveal delay-2">
+                    <div class="sub-head">
+                        <span class="sub-num">07</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>Capstone Build</h4>
+                    <p>Scoping, prototyping, and iterating on the final project with peer review.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="#" class="sub-card reveal delay-3">
+                    <div class="sub-head">
+                        <span class="sub-num">08</span>
+                        <span class="sub-status">Coming soon</span>
+                    </div>
+                    <h4>Final Showcase</h4>
+                    <p>The completed capstone, presented to peers and an open audience.</p>
+                    <span class="sub-link">View project
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-card reveal">
+                <span class="pill"><span class="dot"></span>Open to collaboration</span>
+                <h2>Let's build something useful together.</h2>
+                <p>If you are working on data tooling, digital platforms, or applied AI and want to compare notes, my inbox is open.</p>
+                <div class="contact-actions">
+                    <a href="mailto:sowahr@who.int" class="btn btn-light">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                        sowahr@who.int
+                    </a>
+                    <a href="#submissions" class="btn btn-line">
+                        See the work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Richmond Doe Sowah. Built for the <a href="https://thegraphcourses.org" target="_blank" rel="noopener">Generative AI for Work & Research</a> cohort.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection-based reveal
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Subtle nav shadow on scroll
+        const nav = document.querySelector('nav.topbar');
+        const onScroll = () => {
+            if (window.scrollY > 20) {
+                nav.style.boxShadow = '0 16px 40px -14px rgba(0, 32, 80, 0.18)';
+                nav.style.background = 'rgba(255, 255, 255, 0.94)';
+            } else {
+                nav.style.boxShadow = '0 10px 30px -12px rgba(0, 32, 80, 0.10)';
+                nav.style.background = 'rgba(255, 255, 255, 0.78)';
+            }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    </script>
+</body>
+</html>
