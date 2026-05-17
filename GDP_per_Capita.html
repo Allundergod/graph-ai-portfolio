@@ -45,6 +45,26 @@
     .meta p { margin:.1rem 0; }
     p { margin:.55rem 0 1rem; }
     a { color:#0645ad; }
+
+    .portfolio-link {
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      margin:0 0 1.75rem;
+      padding:.55rem .85rem;
+      border:1px solid var(--accent);
+      border-radius:999px;
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+      background:#fff;
+    }
+    .portfolio-link:hover,
+    .portfolio-link:focus {
+      background:var(--accent);
+      color:#fff;
+      outline:none;
+    }
     table {
       width:100%;
       border-collapse:collapse;
@@ -95,6 +115,7 @@
 </head>
 <body>
 <main>
+  <a class="portfolio-link" href="https://allundergod.github.io/graph-ai-portfolio/" aria-label="Back to portfolio">&larr; Back to Portfolio</a>
   <header>
     <h1>GDP per Capita and Life Expectancy</h1>
     <div class="meta">
