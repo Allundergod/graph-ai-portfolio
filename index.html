@@ -826,6 +826,115 @@
         }
         .sub-card:hover .sub-link { gap: 12px; }
 
+
+        /* ===== Consultation form ===== */
+        #consultation {
+            background:
+                radial-gradient(70% 70% at 15% 10%, rgba(0, 154, 222, 0.08) 0%, transparent 58%),
+                radial-gradient(70% 70% at 85% 90%, rgba(244, 168, 29, 0.10) 0%, transparent 60%),
+                white;
+        }
+
+        .consultation-wrap {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 34px;
+            align-items: start;
+        }
+
+        .consultation-copy {
+            background: var(--grad-deep);
+            color: white;
+            border-radius: 28px;
+            padding: 42px;
+            position: sticky;
+            top: 110px;
+            overflow: hidden;
+            box-shadow: 0 22px 48px -24px rgba(0, 32, 80, 0.35);
+        }
+
+        .consultation-copy::before {
+            content: '';
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            top: -160px;
+            right: -130px;
+            background: radial-gradient(circle, rgba(0, 154, 222, 0.38) 0%, transparent 64%);
+            pointer-events: none;
+        }
+
+        .consultation-copy h3 {
+            color: white;
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 18px 0 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .consultation-copy p {
+            color: rgba(255, 255, 255, 0.76);
+            font-size: 0.98rem;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .consultation-list {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .consultation-list li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.94rem;
+        }
+
+        .consultation-list svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            color: var(--yellow);
+            margin-top: 3px;
+        }
+
+        .form-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 18px;
+            box-shadow: 0 20px 46px -26px rgba(0, 32, 80, 0.24);
+            overflow: hidden;
+        }
+
+        .google-form-frame {
+            width: 100%;
+            min-height: 826px;
+            border: 0;
+            display: block;
+            border-radius: 18px;
+            background: white;
+        }
+
+        @media (max-width: 900px) {
+            .consultation-wrap { grid-template-columns: 1fr; }
+            .consultation-copy { position: relative; top: auto; }
+        }
+
+        @media (max-width: 640px) {
+            .consultation-copy { padding: 32px 24px; }
+            .form-card { padding: 10px; border-radius: 22px; }
+            .google-form-frame { min-height: 880px; }
+        }
+
+
         /* ===== Closing ===== */
         #closing { padding: 110px 0; }
         .contact-card {
@@ -944,6 +1053,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#course">Course</a></li>
             <li><a href="#submissions">Submissions</a></li>
+            <li><a href="#consultation">Consultation</a></li>
         </ul>
         <a href="#submissions" class="btn btn-primary nav-cta">View Work</a>
     </nav>
@@ -1300,6 +1410,44 @@
                         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
                     </span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Consultation Form -->
+    <section id="consultation">
+        <div class="container">
+            <div class="head">
+                <span class="eyebrow reveal">// Consultation</span>
+                <h2 class="reveal delay-1">Contact for <span class="gradient-text">Consultation</span></h2>
+                <p class="reveal delay-2">Use the form below to share a short note about the support you need, the context, and the best way to follow up.</p>
+            </div>
+
+            <div class="consultation-wrap">
+                <div class="consultation-copy reveal">
+                    <span class="pill"><span class="dot"></span>Let us start the conversation</span>
+                    <h3>Looking for support with data, dashboards, or digital systems?</h3>
+                    <p>Send the details through the consultation form and I will review the request based on the scope, timeline, and expected output.</p>
+                    <ul class="consultation-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Analytics, dashboards, and data-use products
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Web platforms, reporting tools, and workflow systems
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Practical AI support for research and public health work
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="form-card reveal delay-1">
+                    <iframe class="google-form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSeaKMfs1b60g1hrPsFnmTuCTlL4rCa-OILBChA0pBIUJicgGg/viewform?embedded=true" loading="lazy" title="Contact for Consultation form">Loading…</iframe>
+                </div>
             </div>
         </div>
     </section>
